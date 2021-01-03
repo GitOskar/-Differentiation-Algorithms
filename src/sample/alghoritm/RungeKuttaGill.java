@@ -21,6 +21,6 @@ public class RungeKuttaGill extends BaseEngRunGillKutt {
 
     @Override
     public String getTitle() {
-        return "Differentiation by Runge-Kutta-Gill method";
+        return "Runge-Kutta-Gill method";
     }
 }

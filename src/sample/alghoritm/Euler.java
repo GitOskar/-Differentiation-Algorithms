@@ -43,6 +43,6 @@ public class Euler extends BaseAlgorithm implements AlgorithmInterface
     @Override
     public String getTitle()
     {
-        return "Differentiation by Euler method";
+        return "Euler method";
     }
 }

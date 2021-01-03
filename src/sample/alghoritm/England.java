@@ -11,7 +11,7 @@ public class England extends BaseEngRunGillKutt {
 
     @Override
     public String getTitle() {
-        return "Differentiation by England method";
+        return "England method";
     }
 
     @Override
