@@ -11,7 +11,8 @@ public abstract class BaseEngRunGillKutt extends BaseAlgorithm implements Algori
 
     protected double x0, y0;
 
-    public BaseEngRunGillKutt(double x0, double y0) {
+    public BaseEngRunGillKutt(double x0, double y0, Example example) {
+        super(example);
         this.x0 = x0;
         this.y0 = y0;
     }
@@ -30,7 +31,7 @@ public abstract class BaseEngRunGillKutt extends BaseAlgorithm implements Algori
         /*
         Bonus record to fill the chart range
          */
-        y += h * function(i, y);
+        y += h * function(i, y, example);
         points.add(new Point2D(i, y));
         return points;
     }
