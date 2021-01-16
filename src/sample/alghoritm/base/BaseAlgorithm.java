@@ -1,5 +1,7 @@
 package sample.alghoritm.base;
 
+import sample.example.exampleEnum.Example;
+
 public abstract class BaseAlgorithm {
     protected Example example;
 
@@ -7,7 +9,7 @@ public abstract class BaseAlgorithm {
         this.example = example;
     }
 
-    protected double function(double x, double y, Example example)
+    protected double function(double x, double y)
     {
         switch (example){
             case EXAMPLE1: return y;

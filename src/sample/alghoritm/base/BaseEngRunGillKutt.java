@@ -1,8 +1,7 @@
 package sample.alghoritm.base;
 
 import javafx.geometry.Point2D;
-import sample.alghoritm.base.AlgorithmInterface;
-import sample.alghoritm.base.BaseAlgorithm;
+import sample.example.exampleEnum.Example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +30,7 @@ public abstract class BaseEngRunGillKutt extends BaseAlgorithm implements Algori
         /*
         Bonus record to fill the chart range
          */
-        y += h * function(i, y, example);
+        y += h * function(i, y);
         points.add(new Point2D(i, y));
         return points;
     }

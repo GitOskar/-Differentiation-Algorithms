@@ -5,7 +5,7 @@ import sample.alghoritm.England;
 import sample.alghoritm.Euler;
 import sample.alghoritm.RungeKutta;
 import sample.alghoritm.RungeKuttaGill;
-import sample.alghoritm.base.Example;
+import sample.example.exampleEnum.Example;
 import sample.factory.algorithmEnum.AlgorithmEnum;
 
 public class AlgorithmFactory {

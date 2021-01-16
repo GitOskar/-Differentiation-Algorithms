@@ -52,8 +52,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -125,7 +125,7 @@
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\javafx-sdk-15\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.alghoritm.base.*" />
+          <option name="PATTERN" value="sample.example.exampleEnum.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -141,7 +141,7 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="sample.alghoritm.base.*" />
+          <option name="PATTERN" value="sample.example.exampleEnum.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,34 +219,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609590436096" />
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1609628140889">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser" timestamp="1610796180396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1609628140889" />
-    <state x="529" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1609623309392">
+    <state x="765" y="236" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1610796180396" />
+    <state x="275" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1610795088230">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="529" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609623309392" />
-    <state x="687" y="332" key="FileChooserDialogImpl" timestamp="1609590103133">
+    <state x="275" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610795088230" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1610797342165">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="687" y="332" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609590103133" />
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom" timestamp="1609636765351">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1610797342165" />
+    <state x="687" y="332" key="FileChooserDialogImpl" timestamp="1609940850197">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609636765351" />
-    <state width="1899" height="281" key="GridCell.Tab.0.center" timestamp="1609636765351">
+    <state x="687" y="332" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1609940850197" />
+    <state width="1899" height="561" key="GridCell.Tab.0.bottom" timestamp="1610798228504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609636765351" />
-    <state width="1899" height="281" key="GridCell.Tab.0.left" timestamp="1609636765350">
+    <state width="1899" height="561" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1610798228504" />
+    <state width="1899" height="561" key="GridCell.Tab.0.center" timestamp="1610798228504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609636765350" />
-    <state width="1899" height="281" key="GridCell.Tab.0.right" timestamp="1609636765351">
+    <state width="1899" height="561" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1610798228504" />
+    <state width="1899" height="561" key="GridCell.Tab.0.left" timestamp="1610798228504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609636765351" />
+    <state width="1899" height="561" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1610798228504" />
+    <state width="1899" height="561" key="GridCell.Tab.0.right" timestamp="1610798228504">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1899" height="561" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1610798228504" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1609610028508">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -275,6 +279,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="551" y="181" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1609589562162" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1610531506038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1610531506038" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609628074228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

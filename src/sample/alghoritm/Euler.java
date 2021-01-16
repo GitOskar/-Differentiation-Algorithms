@@ -3,7 +3,7 @@ package sample.alghoritm;
 import javafx.geometry.Point2D;
 import sample.alghoritm.base.AlgorithmInterface;
 import sample.alghoritm.base.BaseAlgorithm;
-import sample.alghoritm.base.Example;
+import sample.example.exampleEnum.Example;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,14 +28,14 @@ public class Euler extends BaseAlgorithm implements AlgorithmInterface
 
         for (; i<=border ; i+=h)
         {
-            y += h * function(i, y, example);
+            y += h * function(i, y);
             points.add(new Point2D(i, y));
         }
 
         /*
         Bonus record to fill the chart range
          */
-        y += h * function(i, y, example);
+        y += h * function(i, y);
         points.add(new Point2D(i, y));
         return points;
     }

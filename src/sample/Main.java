@@ -1,3 +1,7 @@
+/*
+* Oskar Wołosiuk
+* */
+
 package sample;
 
 import javafx.animation.Animation;
@@ -13,39 +17,27 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.alghoritm.base.AlgorithmInterface;
 import sample.alghoritm.RecordHolder;
-import sample.alghoritm.base.Example;
-import sample.factory.AlgorithmFactory;
+import sample.example.ExampleCreator;
+import sample.example.exampleEnum.Example;
 import sample.factory.algorithmEnum.AlgorithmEnum;
 
 public class Main extends Application {
 
-    static double h = 1.0, step = 0.001, htmp = h;
+    final private double h = 1.0, step = 0.001;
+    private double hTmp = h;
 
     @Override
     public void start(Stage stage) {
-        final Example example = Example.EXAMPLE3;
-        final AlgorithmEnum algorithmEnum = AlgorithmEnum.ENGLAND;
+        final Example example = Example.EXAMPLE2;
+        final AlgorithmEnum algorithmEnum = AlgorithmEnum.RUNGE_KUTTA;
 
         NumberAxis xAxis = new NumberAxis();
         NumberAxis yAxis = new NumberAxis();
         LineChart<Number, Number> lineChart = new LineChart<Number, Number>(xAxis, yAxis);
         XYChart.Series<Number, Number> series = new XYChart.Series();
         RecordHolder recordHolder = new RecordHolder();
-        AlgorithmInterface algorithm = null;
-        switch (example)
-        {
-            case EXAMPLE1:
-                algorithm = exampleInit1(lineChart, xAxis, yAxis, recordHolder, algorithmEnum);
-                break;
-            case EXAMPLE2:
-                algorithm = exampleInit2(lineChart, xAxis, yAxis, recordHolder, algorithmEnum);
-                break;
-            case EXAMPLE3:
-                algorithm = exampleInit3(lineChart, xAxis, yAxis, recordHolder, algorithmEnum);
-                break;
-            default:
-                throw new NullPointerException("Example not found");
-        }
+        ExampleCreator exampleCreator = new ExampleCreator(xAxis, yAxis, lineChart, series, recordHolder, example, algorithmEnum, h, step);
+        AlgorithmInterface algorithm = exampleCreator.createExamples();
 
         lineChart.setTitle(algorithm.getTitle());
         for (Point2D point : recordHolder.getNext())
@@ -53,11 +45,11 @@ public class Main extends Application {
 
         Timeline timeLine = new Timeline();
         timeLine.getKeyFrames().add(new KeyFrame(Duration.millis(10),
-                new EventHandler<ActionEvent>() {
-                    @Override public void handle(ActionEvent actionEvent) {
-                        reDraw(recordHolder, series, lineChart, htmp);
-                        changeH();
-                    }
+                actionEvent -> {
+                    reDraw(recordHolder, series, lineChart, hTmp);
+                    hTmp -= step;
+                    if (hTmp < 0)
+                        hTmp = h - step;
                 }));
         timeLine.setCycleCount(Animation.INDEFINITE);
         timeLine.play();
@@ -71,17 +63,7 @@ public class Main extends Application {
         launch(args);
     }
 
-    public void init(LineChart<Number, Number> lineChart, NumberAxis xAxis, NumberAxis yAxis)
-    {
-        lineChart.setCreateSymbols(false);
-        lineChart.setAnimated(false);
-        xAxis.setAutoRanging(false);
-        yAxis.setAutoRanging(false);
-        xAxis.setLabel("X");
-        yAxis.setLabel("Y");
-    }
-
-    public void reDraw(RecordHolder recordHolder, XYChart.Series series, LineChart lineChart, double h)
+    private void reDraw(RecordHolder recordHolder, XYChart.Series series, LineChart lineChart, double h)
     {
         series = new XYChart.Series();
         for (Point2D point : recordHolder.getNext())
@@ -90,51 +72,5 @@ public class Main extends Application {
         series.setName("H: " + String.format("%.3f", h));
         lineChart.getData().remove(0);
         lineChart.getData().addAll(series);
-    }
-
-    public static void changeH()
-    {
-        htmp -= step;
-        if (htmp < 0)
-            htmp = h;
-    }
-
-    public AlgorithmInterface exampleInit1(LineChart<Number, Number> lineChart, NumberAxis xAxis, NumberAxis yAxis, RecordHolder recordHolder, AlgorithmEnum algorithmEnum)
-    {
-        init(lineChart, xAxis, yAxis);
-        xAxis.setLowerBound(0.0);
-        xAxis.setUpperBound(4.0);
-        yAxis.setUpperBound(60.0);
-        yAxis.setLowerBound(0.0);
-        AlgorithmFactory algorithmFactory = new AlgorithmFactory();
-        AlgorithmInterface algorithm = algorithmFactory.createAlgorithm(AlgorithmEnum.EULER, 0, 1, Example.EXAMPLE1);
-        recordHolder.createSeries(algorithm, h, 0.001, 4.0, step);
-        return algorithm;
-    }
-
-    public AlgorithmInterface exampleInit2(LineChart<Number, Number> lineChart, NumberAxis xAxis, NumberAxis yAxis, RecordHolder recordHolder, AlgorithmEnum algorithmEnum)
-    {
-        init(lineChart, xAxis, yAxis);
-        xAxis.setLowerBound(0.0);
-        xAxis.setUpperBound(2.0);
-        yAxis.setUpperBound(250.0);
-        yAxis.setLowerBound(0.0);
-        AlgorithmFactory algorithmFactory = new AlgorithmFactory();
-        AlgorithmInterface algorithm = algorithmFactory.createAlgorithm(AlgorithmEnum.EULER, 0, 3, Example.EXAMPLE2);
-        recordHolder.createSeries(algorithm, h, 0.001, 2.0, step);
-        return algorithm;
-    }
-
-    public AlgorithmInterface exampleInit3(LineChart<Number, Number> lineChart, NumberAxis xAxis, NumberAxis yAxis, RecordHolder recordHolder, AlgorithmEnum algorithmEnum)
-    {
-        init(lineChart, xAxis, yAxis);
-        xAxis.setLowerBound(0.0);
-        xAxis.setUpperBound(2.0);
-        yAxis.setUpperBound(150.0);
-        yAxis.setLowerBound(0.0);
-        AlgorithmFactory algorithmFactory = new AlgorithmFactory();
-        AlgorithmInterface algorithm = algorithmFactory.createAlgorithm(AlgorithmEnum.EULER, 0, 2, Example.EXAMPLE3);
-        recordHolder.createSeries(algorithm, h, 0.001, 2.0, step);
-        return algorithm;
     }
 }
