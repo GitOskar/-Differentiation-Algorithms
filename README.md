@@ -6,4 +6,5 @@ Few Differentiation Algorithms with animated charts JavaFX
 - Runge-Kutta
 - England
 - Runge-Kutta-Gill \
+\
 All algorithms are 4th order.
